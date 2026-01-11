@@ -5,6 +5,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const propertyRoutes = require('./routes/propertyRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes');
+const placeRoutes = require('./routes/PlacesRoutes')
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 
 app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/place', placeRoutes)
 
 connectDB();
 
