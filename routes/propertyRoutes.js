@@ -11,12 +11,14 @@ const upload = require('../middleware/upload');
 
 const router = express.Router();
 
-// Public routes
+
 router.get('/', getProperties);                   
 router.get('/:slug', getPropertyBySlug);           
 
 router.post('/', protect, upload.array('gallery', 10), createProperty);       
 router.put('/:id', protect, upload.array('gallery', 10), updateProperty);       
+
+
 router.delete('/:id', protect, deleteProperty);   
 
 module.exports = router;
